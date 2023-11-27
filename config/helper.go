@@ -15,21 +15,21 @@ func (ConfigHelper *ConfigHelper) Comment(comment string) {
 
 func (ConfigHelper *ConfigHelper) ConfigString(serverConfig string, jsonConfig *string) error {
 	if jsonConfig != nil {
-		ConfigHelper.WriteString(fmt.Sprintf("%s %s\n", serverConfig, *jsonConfig))
+		ConfigHelper.WriteString(fmt.Sprintf("%s \"%s\"\n", serverConfig, *jsonConfig))
 	}
 	return nil
 }
 
 func (ConfigHelper *ConfigHelper) ConfigBool(serverConfig string, jsonConfig *bool) error {
 	if jsonConfig != nil {
-		ConfigHelper.WriteString(fmt.Sprintf("%s %s\n", serverConfig, boolToConfig(*jsonConfig)))
+		ConfigHelper.WriteString(fmt.Sprintf("%s \"%s\"\n", serverConfig, boolToConfig(*jsonConfig)))
 	}
 	return nil
 }
 
 func (ConfigHelper *ConfigHelper) ConfigInt(serverConfig string, jsonConfig *int) error {
 	if jsonConfig != nil {
-		ConfigHelper.WriteString(fmt.Sprintf("%s %d\n", serverConfig, *jsonConfig))
+		ConfigHelper.WriteString(fmt.Sprintf("%s \"%d\"\n", serverConfig, *jsonConfig))
 	}
 	return nil
 }
